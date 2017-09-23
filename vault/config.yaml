@@ -1,0 +1,35 @@
+---
+name: Vault
+version: dev
+slug: vault
+description: Secure, store and tightly control access to tokens, passwords, certificates, encryption keys for protecting secrets and other sensitive data using a UI, CLI, or HTTP API.
+url: https://github.com/hassio-addons/addon-vault
+codenotary: codenotary@frenck.dev
+ingress: true
+ingress_port: 1337
+ingress_stream: true
+panel_icon: mdi:chart-areaspline
+startup: services
+homeassistant: 0.92.0b2
+hassio_api: true
+init: false
+arch:
+  - aarch64
+  - amd64
+  - armhf
+  - armv7
+  - i386
+ports:
+  8200/tcp: 8200
+ports_description:
+  8200/tcp: vault server
+options:
+  log_level: info
+  certfile: fullchain.pem
+  keyfile: privkey.pem
+  root_tooken: ''
+schema:
+  log_level: list(trace|debug|info|notice|warning|error|fatal)
+  certfile: str
+  keyfile: str
+  root_tooken: str

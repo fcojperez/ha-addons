@@ -1,0 +1,9 @@
+#!/command/with-contenv bashio
+# shellcheck shell=bash
+# ==============================================================================
+# Home Assistant Community Add-on: Vault
+# ==============================================================================
+
+bashio::log.info "Starting Vault Server..."
+
+exec /usr/bin/vault-server.sh
